@@ -1,0 +1,1636 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2022 6:15:13 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KAVICHANDRAN"
+  DTS:CreatorName="KAVICHANDRAN\kavichandran"
+  DTS:DTSID="{DBB3CF30-E7D3-4D08-BA14-7CCCC5AFBC6B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{97BBB183-6CF1-40AD-872D-EA9EA3B8C090}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FB3CA40B-5922-4AF9-8CC7-636930A2DC01}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\Source Files\sales.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{7201FDE8-1C3B-4136-AD00-20B38026E8E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{146DE810-CCE7-40FA-9433-BA27C9DF20F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemType"
+              DTS:DTSID="{FE2694FD-BA10-485A-8155-1264EEF1DE01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesChannel"
+              DTS:DTSID="{6A10F980-B20D-4366-AF33-466737FA61DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderPriority"
+              DTS:DTSID="{516A8E37-A673-4FB9-8CFD-5EC644081BE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{6D6D799B-8906-4FF3-8EC7-3DF6DFA9C055}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{7F6D43EB-FC8D-4CB5-AE89-38EE69668266}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipDate"
+              DTS:DTSID="{80C77881-CF13-4616-9E39-3A61608E1B21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitSold"
+              DTS:DTSID="{8EB42A55-2E65-4D04-A48A-E2D18BF1938E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unitprice"
+              DTS:DTSID="{08CA39C8-9728-4DA9-B310-2A3765A7D310}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unitCOst"
+              DTS:DTSID="{F01F0CDD-4713-482A-90AA-CC155E90E7E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRevenue"
+              DTS:DTSID="{1E043A0D-6CD4-43D8-A328-2D4A82CB3258}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCost"
+              DTS:DTSID="{931BA051-1D93-4C4E-A15A-D8F5A319715A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalProfit"
+              DTS:DTSID="{B1B6B59E-DC54-41B1-81C9-B3F98F33BC76}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{A5B5F023-694A-4377-80C1-F6EA81DBD56A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C14BF98B-45CA-45DA-AC6F-AA109C4C61F8}"
+      DTS:ObjectName="LocalHost.R_Group_SSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=R_Group_SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sales_csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C3684CA9-E6D4-470C-806A-7761EEAD9672}"
+      DTS:ObjectName="sales_csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\Source Files\sales.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{7350F35A-8C7F-4F31-9980-F4BD44248D0B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{3EF2C1F9-9493-4537-9D49-6D47E79DEFE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemType"
+              DTS:DTSID="{7E056041-B674-4C6E-A5F8-6FD4BB17468C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salesChannel"
+              DTS:DTSID="{B7738275-EDE5-47A4-95CB-89CD62F45223}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="orderPriority"
+              DTS:DTSID="{5582E795-D7A4-49CA-95FC-018C1F34D5D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{35C4B14E-66C2-4B9B-B674-DA236FA8012F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderId"
+              DTS:DTSID="{044C188C-971F-4FFE-B2D8-66A803158FEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipDate"
+              DTS:DTSID="{99796493-D9B3-44C8-8856-63F17BD04BA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unitSold"
+              DTS:DTSID="{3B34D70F-B344-4AF9-9E85-DFA9395A98A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{156669F3-EEC5-406E-95FA-E3521E5328C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitCost"
+              DTS:DTSID="{0D43E00D-F43C-4140-B46A-DA6591EEC965}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRevenue"
+              DTS:DTSID="{BBE76E68-73A5-4B6F-951B-6C175D196323}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="totalCost"
+              DTS:DTSID="{04C29F69-FB58-40B5-AE71-4192A094EC2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalProfit"
+              DTS:DTSID="{51AC817C-5A5F-424C-9994-275945C170E8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\loading sales csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{92D4150F-A1E4-40F6-B500-63E7C8806FE1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="loading sales csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\loading sales csv\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[ItemType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ItemType"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[ItemType]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[SalesChannel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalesChannel"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[SalesChannel]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[OrderPriority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderPriority"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderPriority]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[OrderDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderDate"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[OrderID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderID"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[shipDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipDate"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[shipDate]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[UnitSold]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UnitSold"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[UnitSold]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[Unitprice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unitprice"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Unitprice]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[unitCOst]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="unitCOst"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[unitCOst]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[TotalRevenue]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TotalRevenue"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalRevenue]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[TotalCost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TotalCost"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalCost]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input].Columns[TotalProfit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TotalProfit"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalProfit]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Region]"
+                      name="Copy of Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Region]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of country]"
+                      name="Copy of country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[country]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ItemType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ItemType]"
+                      name="Copy of ItemType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[ItemType]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salesChannel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salesChannel]"
+                      name="Copy of salesChannel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[SalesChannel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of orderPriority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of orderPriority]"
+                      name="Copy of orderPriority"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderPriority]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderDate]"
+                      name="Copy of OrderDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderId]"
+                      name="Copy of OrderId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ShipDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ShipDate]"
+                      name="Copy of ShipDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[shipDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of unitSold]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of unitSold]"
+                      name="Copy of unitSold"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[UnitSold]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitPrice]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitPrice]"
+                      name="Copy of UnitPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Unitprice]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitCost]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitCost]"
+                      name="Copy of UnitCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[unitCOst]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalRevenue]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalRevenue]"
+                      name="Copy of TotalRevenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalRevenue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of totalCost]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of totalCost]"
+                      name="Copy of totalCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalCost]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalProfit]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalProfit]"
+                      name="Copy of TotalProfit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalProfit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\loading sales csv\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading sales csv\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[ItemType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemType]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[ItemType]"
+                      name="ItemType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderDate]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalRevenue]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalRevenue]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalRevenue]"
+                      name="TotalRevenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalProfit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalProfit]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalProfit]"
+                      name="TotalProfit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[SalesChannel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesChannel]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[SalesChannel]"
+                      name="SalesChannel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderPriority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderPriority]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderPriority]"
+                      name="OrderPriority"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[shipDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[shipDate]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[shipDate]"
+                      name="shipDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[UnitSold]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitSold]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[UnitSold]"
+                      name="UnitSold"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Unitprice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unitprice]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[unitCOst]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[unitCOst]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[unitCOst]"
+                      name="unitCOst"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalCost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalCost]"
+                      length="50"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].Columns[TotalCost]"
+                      name="TotalCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemType" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalRevenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TotalRevenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalProfit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TotalProfit" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesChannel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalesChannel" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderPriority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderPriority" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[shipDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="shipDate" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitSold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UnitSold" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unitprice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unitprice" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[unitCOst]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="unitCOst" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TotalCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TotalCost" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\loading sales csv\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sales_DC]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading sales csv\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Region]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Region"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Region]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of country"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of country]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ItemType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ItemType"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemType]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ItemType]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of salesChannel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of salesChannel"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salesChannel]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salesChannel]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of orderPriority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of orderPriority"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orderPriority]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of orderPriority]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of OrderDate"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderDate]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of OrderId]"
+                      cachedDataType="i8"
+                      cachedName="Copy of OrderId"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderId]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of OrderId]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ShipDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of ShipDate"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDate]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ShipDate]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of unitSold]"
+                      cachedDataType="r4"
+                      cachedName="Copy of unitSold"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unitSold]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of unitSold]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of UnitPrice]"
+                      cachedDataType="r4"
+                      cachedName="Copy of UnitPrice"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitPrice]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of UnitCost]"
+                      cachedDataType="r4"
+                      cachedName="Copy of UnitCost"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UnitCost]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of TotalRevenue]"
+                      cachedDataType="r4"
+                      cachedName="Copy of TotalRevenue"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalRevenue]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalRevenue]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of totalCost]"
+                      cachedDataType="r4"
+                      cachedName="Copy of totalCost"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[totalCost]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of totalCost]" />
+                    <inputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of TotalProfit]"
+                      cachedDataType="r4"
+                      cachedName="Copy of TotalProfit"
+                      externalMetadataColumnId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalProfit]"
+                      lineageId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TotalProfit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemType" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salesChannel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="salesChannel" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orderPriority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="orderPriority" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderId]"
+                      dataType="i8"
+                      name="OrderId" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipDate]"
+                      dataType="dbTimeStamp"
+                      name="ShipDate" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unitSold]"
+                      dataType="r8"
+                      name="unitSold" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="r8"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      dataType="r8"
+                      name="UnitCost" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalRevenue]"
+                      dataType="r8"
+                      name="TotalRevenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[totalCost]"
+                      dataType="r8"
+                      name="totalCost" />
+                    <externalMetadataColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalProfit]"
+                      dataType="r8"
+                      name="TotalProfit" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\loading sales csv\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\loading sales csv\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\loading sales csv\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\loading sales csv.Paths[Data Conversion Output]"
+              endId="Package\loading sales csv\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\loading sales csv\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\loading sales csv.Paths[Flat File Source Output]"
+              endId="Package\loading sales csv\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\loading sales csv\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\loading sales csv"
+          TopLeft="412.5,152.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\loading sales csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\loading sales csv\OLE DB Destination"
+          TopLeft="347.5,244.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\loading sales csv\Data Conversion"
+          TopLeft="419.5,151.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\loading sales csv\Flat File Source"
+          TopLeft="418.5,47.5" />
+        <EdgeLayout
+          Id="Package\loading sales csv.Paths[Flat File Source Output]"
+          TopLeft="495.75,89.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,19.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\loading sales csv.Paths[Data Conversion Output]"
+          TopLeft="497.5,193.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64.5,51"
+              Start="0,0"
+              End="-64.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
+                  <mssgle:LineSegment
+                    End="-60.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.5,25.5"
+                    Point2="-64.5,25.5"
+                    Point3="-64.5,29.5" />
+                  <mssgle:LineSegment
+                    End="-64.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\loading sales csv\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
