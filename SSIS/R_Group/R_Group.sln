@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "R_Group", "R_Group.dtproj", "{A7A8F7EC-F5C9-4B88-BF54-6480A56BF7BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7A8F7EC-F5C9-4B88-BF54-6480A56BF7BA}.Development|Default.ActiveCfg = Development
+		{A7A8F7EC-F5C9-4B88-BF54-6480A56BF7BA}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB82B790-68BB-45AD-8AB5-85E62F9EB2B0}
+	EndGlobalSection
+EndGlobal

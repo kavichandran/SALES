@@ -1,0 +1,1333 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2022 5:44:47 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KAVICHANDRAN"
+  DTS:CreatorName="KAVICHANDRAN\kavichandran"
+  DTS:DTSID="{883A30E2-642C-409A-AC0A-116A85A0836E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{141D0F39-2EB0-4B98-8512-712CB76A0D71}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[employee_xlsx_conn]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{23595E24-36F0-4FAC-A5C0-5C4C716741AB}"
+      DTS:ObjectName="employee_xlsx_conn">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Onlineclasss\R_GROUP\Source Files\Employee_xlsx.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Employee]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F7E7A07C-60CE-4CA3-BCEA-C278666BEC00}"
+      DTS:ObjectName="LocalHost.Employee">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Employee;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\INCREMENTAL LOAD USING LOOKUP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CC7C0242-8128-4BE7-8804-A463BB04CAFC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INCREMENTAL LOAD USING LOOKUP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[employee_id]"
+                      cachedDataType="r8"
+                      cachedName="employee_id"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[first_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="first_name"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[last_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_name"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="email"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[phone_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="phone_number"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[phone_number]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[hire_date]"
+                      cachedDataType="date"
+                      cachedName="hire_date"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[hire_date]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input].Columns[salary]"
+                      cachedDataType="r8"
+                      cachedName="salary"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]"
+                      name="Copy of employee_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[employee_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]"
+                      name="Copy of first_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[first_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]"
+                      name="Copy of last_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[last_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]"
+                      name="Copy of email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[email]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone_number]"
+                      name="Copy of phone_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[phone_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of hire_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of hire_date]"
+                      name="Copy of hire_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[hire_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salary]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salary]"
+                      name="Copy of salary"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[salary]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[employee_xlsx_conn]"
+                  connectionManagerRefId="Package.ConnectionManagers[employee_xlsx_conn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[employee_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[employee_id]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[first_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[first_name]"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[last_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[last_name]"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[phone_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[phone_number]"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[phone_number]"
+                      name="phone_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[hire_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[hire_date]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[hire_date]"
+                      name="hire_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[salary]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[salary]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[employee_id]"
+                      dataType="r8"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[phone_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="phone_number" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[hire_date]"
+                      dataType="date"
+                      name="hire_date" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[job_id]"
+                      dataType="r8"
+                      name="job_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[salary]"
+                      dataType="r8"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[manager_id]"
+                      dataType="r8"
+                      name="manager_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output].ExternalColumns[department_id]"
+                      dataType="r8"
+                      name="department_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[employee_id]"
+                      dataType="r8"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[first_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[last_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[phone_number]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[phone_number]"
+                      name="phone_number" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[hire_date]"
+                      dataType="date"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[hire_date]"
+                      name="hire_date" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[salary]"
+                      dataType="r8"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INCREMENTAL LOAD USING LOOKUP\insert"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="insert"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[employees_tgt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Employee]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Employee]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of employee_id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of employee_id"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of first_name"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of last_name"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of email"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of phone_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of phone_number"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[phone_number]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone_number]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of hire_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of hire_date"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of hire_date]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].Columns[Copy of salary]"
+                      cachedDataType="i4"
+                      cachedName="Copy of salary"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone_number" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
+                      dataType="dbDate"
+                      name="hire_date" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      dataType="numeric"
+                      name="salary"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
+                      dataType="i4"
+                      name="manager_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[department_id]"
+                      dataType="i4"
+                      name="department_id" />
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input].ExternalColumns[exp]"
+                      dataType="i4"
+                      name="exp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[employees_tgt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[employees_tgt]) [refTable]
+where [refTable].[employee_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="employee_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="last_name" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="email" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="phone_number" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="hire_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="job_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="salary" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;referenceColumn name="manager_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="department_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="exp" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Employee]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Employee]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input].Columns[Copy of employee_id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of employee_id"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">employee_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="update record- matched"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update [employees_tgt] set  First_name = ?,
+							Last_name = ?,
+							Email=?,
+							Phone_number = ?,
+							Hire_date =?,
+					
+							salary=?
+where employee_id=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Employee]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Employee]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of first_name"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of first_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of last_name"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of last_name]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of email"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of email]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of phone_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of phone_number"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone_number]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of hire_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of hire_date"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of hire_date]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of salary]"
+                      cachedDataType="i4"
+                      cachedName="Copy of salary"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of salary]" />
+                    <inputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].Columns[Copy of employee_id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of employee_id"
+                      externalMetadataColumnId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of employee_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="dbDate"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="numeric"
+                      name="Param_5"
+                      precision="8"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Data Conversion Output]"
+              endId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Excel Source Output]"
+              endId="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Lookup Match Output]"
+              endId="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Lookup No Match Output]"
+              endId="Package\INCREMENTAL LOAD USING LOOKUP\insert.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\INCREMENTAL LOAD USING LOOKUP\Lookup.Outputs[Lookup No Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="256,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP"
+          TopLeft="213.5,71.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\INCREMENTAL LOAD USING LOOKUP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source"
+          TopLeft="190.5,25.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP\Data Conversion"
+          TopLeft="183.5,110.5" />
+        <EdgeLayout
+          Id="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Excel Source Output]"
+          TopLeft="260.75,67.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP\Lookup"
+          TopLeft="202.5,199.5" />
+        <EdgeLayout
+          Id="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Data Conversion Output]"
+          TopLeft="260.25,152.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP\update record- matched"
+          TopLeft="34.5,299.5" />
+        <NodeLayout
+          Size="105,42"
+          Id="Package\INCREMENTAL LOAD USING LOOKUP\insert"
+          TopLeft="457.5,310.5" />
+        <EdgeLayout
+          Id="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Lookup Match Output]"
+          TopLeft="259,241.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-128.5,58"
+              Start="0,0"
+              End="-128.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-124.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-124.5,29"
+                    Point2="-128.5,29"
+                    Point3="-128.5,33" />
+                  <mssgle:LineSegment
+                    End="-128.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-112.44138671875,34,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INCREMENTAL LOAD USING LOOKUP.Paths[Lookup No Match Output]"
+          TopLeft="276.5,241.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="233.5,69"
+              Start="0,0"
+              End="233.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1780104712042" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1780104712042"
+                    Point2="0,28.1780104712042"
+                    Point3="4,28.1780104712042" />
+                  <mssgle:LineSegment
+                    End="229.5,28.1780104712042" />
+                  <mssgle:CubicBezierSegment
+                    Point1="229.5,28.1780104712042"
+                    Point2="233.5,28.1780104712042"
+                    Point3="233.5,32.1780104712042" />
+                  <mssgle:LineSegment
+                    End="233.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="60.94361328125,33.1780104712042,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INCREMENTAL LOAD USING LOOKUP\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INCREMENTAL LOAD USING LOOKUP\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[employees_tgt]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INCREMENTAL LOAD USING LOOKUP\insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
