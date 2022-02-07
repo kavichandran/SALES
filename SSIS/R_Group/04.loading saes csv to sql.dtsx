@@ -1,0 +1,955 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/9/2022 6:18:27 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KAVICHANDRAN"
+  DTS:CreatorName="KAVICHANDRAN\kavichandran"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{18398133-996F-4515-AB07-D53A86346150}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="04 loading saes csv to sql"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{6BBC4BAF-5BBB-408B-8883-A82387BD839F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dest_r_group_sql_conn]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A542C9F3-4F66-42B1-962D-BF17A5CDB193}"
+      DTS:ObjectName="dest_r_group_sql_conn">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=R_Group_SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\load saes csv to sql"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DB141E5D-91C6-4F35-B134-85DC543E8D07}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="load saes csv to sql"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\load saes csv to sql\saes_csv"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="saes_csv"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sales_csv]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load saes csv to sql\saes_csv.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dest_r_group_sql_conn]"
+                  connectionManagerRefId="Package.ConnectionManagers[dest_r_group_sql_conn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Item Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Item Type"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Item Type]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Item Type]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Sales Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Channel"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Sales Channel]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Sales Channel]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Order Priority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order Priority"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order Priority]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Priority]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Order Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order Date"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order Date]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Date]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Order ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order ID"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order ID]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order ID]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Ship Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ship Date"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Ship Date]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Ship Date]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Units Sold]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Units Sold"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Units Sold]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Units Sold]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Unit Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit Price"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Unit Price]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Price]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Unit Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit Cost"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Unit Cost]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Cost]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Total Revenue]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Revenue"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Revenue]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Revenue]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Total Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Cost"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Cost]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Cost]" />
+                    <inputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].Columns[Total Profit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Profit"
+                      externalMetadataColumnId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Profit]"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Profit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load saes csv to sql\saes_csv.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load saes csv to sql\saes_csv.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load saes csv to sql\saes_csv.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load saes csv to sql\saes_csv.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load saes csv to sql\sales vsv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="sales vsv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load saes csv to sql\sales vsv.Connections[FlatFileConnection]"
+                  connectionManagerID="{8E5C56F4-CB54-46E2-9920-7D3121A6FD8F}:invalid"
+                  connectionManagerRefId="{8E5C56F4-CB54-46E2-9920-7D3121A6FD8F}:invalid"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Item Type]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Item Type]"
+                      name="Item Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Sales Channel]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Sales Channel]"
+                      name="Sales Channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order Priority]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Priority]"
+                      name="Order Priority"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order Date]"
+                      name="Order Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order ID]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Order ID]"
+                      name="Order ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Ship Date]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Ship Date]"
+                      name="Ship Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Units Sold]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Units Sold]"
+                      name="Units Sold"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Unit Price]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Price]"
+                      name="Unit Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Unit Cost]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Unit Cost]"
+                      name="Unit Cost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Revenue]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Revenue]"
+                      name="Total Revenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Cost]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Cost]"
+                      name="Total Cost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Profit]"
+                      length="50"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].Columns[Total Profit]"
+                      name="Total Profit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6000"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\load saes csv to sql.Paths[Flat File Source Output]"
+              endId="Package\load saes csv to sql\saes_csv.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\load saes csv to sql\sales vsv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate sales_csv"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CF45FC6D-7525-4527-9AA4-FE5EB85DFD49}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate sales_csv"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A542C9F3-4F66-42B1-962D-BF17A5CDB193}"
+          SQLTask:SqlStatementSource="truncate table sales_Csv" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{62CC634B-C0B7-4286-B990-A528C8B79330}"
+      DTS:From="Package\truncate sales_csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\load saes csv to sql" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\load saes csv to sql"
+          TopLeft="186.5,170.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\truncate sales_csv"
+          TopLeft="154.5,39.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237,81.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.5,89"
+              Start="0,0"
+              End="34.5,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5"
+                    Point2="0,44.5"
+                    Point3="4,44.5" />
+                  <mssgle:LineSegment
+                    End="30.5,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,44.5"
+                    Point2="34.5,44.5"
+                    Point3="34.5,48.5" />
+                  <mssgle:LineSegment
+                    End="34.5,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\load saes csv to sql">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\load saes csv to sql\sales vsv"
+          TopLeft="289.5,108.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\load saes csv to sql\saes_csv"
+          TopLeft="294.5,233.5" />
+        <EdgeLayout
+          Id="Package\load saes csv to sql.Paths[Flat File Source Output]"
+          TopLeft="352.5,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load saes csv to sql\saes_csv">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

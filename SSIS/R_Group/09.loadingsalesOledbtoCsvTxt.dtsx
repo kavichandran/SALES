@@ -1,0 +1,1838 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/17/2022 5:56:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KAVICHANDRAN"
+  DTS:CreatorName="KAVICHANDRAN\kavichandran"
+  DTS:DTSID="{91B38290-7A77-4485-A074-05D9C40B8FB7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{D973E3BD-C1F0-4347-928F-EFCBAF7A36B7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dest_sales_csv_conn]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1F7E96DD-6D86-4736-882B-F5C56098DC82}"
+      DTS:ObjectName="dest_sales_csv_conn">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\sales_txt.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{071058A9-AB68-4671-AA5B-9AB80DC1AB63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{536476A1-F010-4747-A064-9AA35B9D4086}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Item Type"
+              DTS:DTSID="{B65B92EF-6623-4295-AA11-21751A00689A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Channel"
+              DTS:DTSID="{5557545B-C834-4C62-B192-940A70709643}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Priority"
+              DTS:DTSID="{505032EC-CDD7-462F-82FD-E30CA1B30AB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Date"
+              DTS:DTSID="{4897394D-3A98-41E8-859C-A6A1A96AE17F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order ID"
+              DTS:DTSID="{B27FC8EC-502D-41B0-8C5E-CC74502D4F3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ship Date"
+              DTS:DTSID="{0D32450F-CA08-46E7-BA4C-9D9CA2A5232C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units Sold"
+              DTS:DTSID="{AAE15D96-2F20-4E9E-B356-7D35A26D45A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Price"
+              DTS:DTSID="{13070BB5-B8BB-4842-9EBA-135C5784B317}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Cost"
+              DTS:DTSID="{EC7D668C-A65A-4879-8C30-4500051D4341}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Revenue"
+              DTS:DTSID="{524F38B3-59E4-4DCC-8837-6B261351FD24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Cost"
+              DTS:DTSID="{329CEC23-E0C6-409C-893C-5FED5B2B27EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Profit"
+              DTS:DTSID="{7A60A56F-D7B9-48EF-AB21-56D2DC57CBD1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dest_sales_csv_dest_conn]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FC1C585E-C343-4371-AD4F-863FFF822832}"
+      DTS:ObjectName="dest_sales_csv_dest_conn">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Onlineclasss\R_GROUP\dest files\sales_csv.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{0DB2A11D-0158-4458-B877-96EF0FFB27E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{F4A33DCB-4586-4A94-B4FF-E71BCCE006E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Item Type"
+              DTS:DTSID="{75346F1A-84DE-48F5-B728-38828A2DB921}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Channel"
+              DTS:DTSID="{81B6C1EF-5D7C-41AA-B5AF-DA8498AC722A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Priority"
+              DTS:DTSID="{A8C31F60-990C-4A65-B0DC-89A861DAEA90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Date"
+              DTS:DTSID="{73886A7E-4669-453D-886C-AF123146BF5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order ID"
+              DTS:DTSID="{A8CE06AB-E22F-4536-A7F4-BF4861C84526}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ship Date"
+              DTS:DTSID="{3485BF42-F77C-4664-87A0-81C53DB4357F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Units Sold"
+              DTS:DTSID="{987D0F0C-FFDB-4727-8222-FA45CA9C7CE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Price"
+              DTS:DTSID="{061F635A-A6F7-4E3E-8284-D5969F3DDC25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Cost"
+              DTS:DTSID="{E87C0C3A-333D-4BB7-9DC7-E6724B28BF47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Revenue"
+              DTS:DTSID="{591A49B5-0286-4768-B990-964E5B62B09C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Cost"
+              DTS:DTSID="{4ECD3F9B-0EA7-4A6F-9F9F-72F8E2CD6993}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Profit"
+              DTS:DTSID="{83E4191C-3B52-4F65-BDEF-B35554B9B8D9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A0665EE6-FE9E-4D7B-90D5-78884679FC0E}"
+      DTS:ObjectName="LocalHost.R_Group_SSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=R_Group_SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\loading  sales oledb to flatfile"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9D327230-1A9E-4F0F-B42E-D1ADC4E6C923}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="loading  sales oledb to flatfile"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\loading  sales oledb to flatfile\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading  sales oledb to flatfile\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dest_sales_csv_conn]"
+                  connectionManagerRefId="Package.ConnectionManagers[dest_sales_csv_conn]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Item Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Item Type"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Item Type]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Sales Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Sales Channel"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sales Channel]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order Priority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order Priority"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Priority]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order Date"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Date]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order ID"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order ID]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Ship Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Ship Date"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ship Date]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Units Sold]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Units Sold"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Units Sold]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Unit Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Unit Price"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Price]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Unit Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Unit Cost"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Cost]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Revenue]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Revenue"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Revenue]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Cost"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Cost]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Profit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Profit"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Profit]"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\loading  sales oledb to flatfile\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sales_csv]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading  sales oledb to flatfile\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Type]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]"
+                      name="Item Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sales Channel]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]"
+                      name="Sales Channel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Priority]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]"
+                      name="Order Priority"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Date]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]"
+                      name="Order Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order ID]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]"
+                      name="Order ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ship Date]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]"
+                      name="Ship Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Units Sold]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]"
+                      name="Units Sold"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Price]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]"
+                      name="Unit Price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Cost]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]"
+                      name="Unit Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Revenue]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]"
+                      name="Total Revenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Cost]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]"
+                      name="Total Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Profit]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]"
+                      name="Total Profit"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Type]"
+                      name="Item Type" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sales Channel]"
+                      name="Sales Channel" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Priority]"
+                      name="Order Priority" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Date]"
+                      name="Order Date" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order ID]"
+                      name="Order ID" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ship Date]"
+                      name="Ship Date" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Units Sold]"
+                      name="Units Sold" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Price]"
+                      name="Unit Price" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Cost]"
+                      name="Unit Cost" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Revenue]"
+                      name="Total Revenue" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Cost]"
+                      name="Total Cost" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Profit]"
+                      name="Total Profit" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\loading  sales oledb to flatfile.Paths[OLE DB Source Output]"
+              endId="Package\loading  sales oledb to flatfile\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\loading  sales oledb to flatfile\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\loading  sales oledb to flatfile 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7125c1cf-736d-4536-9e54-c91cb6733bc8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="loading  sales oledb to flatfile 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\loading  sales oledb to flatfile 1\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[dest_sales_csv_dest_conn]"
+                  connectionManagerRefId="Package.ConnectionManagers[dest_sales_csv_dest_conn]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Item Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Item Type"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Item Type]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Sales Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Sales Channel"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sales Channel]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order Priority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order Priority"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Priority]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order Date"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Date]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Order ID"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order ID]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Ship Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Ship Date"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ship Date]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Units Sold]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Units Sold"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Units Sold]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Unit Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Unit Price"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Price]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Unit Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Unit Cost"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Cost]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Revenue]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Revenue"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Revenue]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Cost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Cost"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Cost]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]" />
+                    <inputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].Columns[Total Profit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Total Profit"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Profit]"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\loading  sales oledb to flatfile 1\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sales_csv]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.R_Group_SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Type]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Item Type]"
+                      name="Item Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sales Channel]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sales Channel]"
+                      name="Sales Channel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Priority]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Priority]"
+                      name="Order Priority"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Date]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order Date]"
+                      name="Order Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order ID]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Order ID]"
+                      name="Order ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ship Date]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ship Date]"
+                      name="Ship Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Units Sold]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Units Sold]"
+                      name="Units Sold"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Price]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Price]"
+                      name="Unit Price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Cost]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unit Cost]"
+                      name="Unit Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Revenue]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Revenue]"
+                      name="Total Revenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Cost]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Cost]"
+                      name="Total Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Profit]"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Profit]"
+                      name="Total Profit"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Item Type" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Sales Channel" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Priority" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Units Sold" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Unit Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Cost" />
+                    <externalMetadataColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total Profit" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Item Type]"
+                      name="Item Type" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sales Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sales Channel]"
+                      name="Sales Channel" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Priority]"
+                      name="Order Priority" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order Date]"
+                      name="Order Date" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Order ID]"
+                      name="Order ID" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ship Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ship Date]"
+                      name="Ship Date" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Units Sold]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Units Sold]"
+                      name="Units Sold" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Price]"
+                      name="Unit Price" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unit Cost]"
+                      name="Unit Cost" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Revenue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Revenue]"
+                      name="Total Revenue" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Cost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Cost]"
+                      name="Total Cost" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Profit]"
+                      name="Total Profit" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\loading  sales oledb to flatfile 1.Paths[OLE DB Source Output]"
+              endId="Package\loading  sales oledb to flatfile 1\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\loading  sales oledb to flatfile 1\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\loading  sales oledb to flatfile"
+          TopLeft="171.5,184.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\loading  sales oledb to flatfile 1"
+          TopLeft="245,297" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\loading  sales oledb to flatfile">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\loading  sales oledb to flatfile\OLE DB Source"
+          TopLeft="248.5,62.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\loading  sales oledb to flatfile\Flat File Destination"
+          TopLeft="226.5,222.5" />
+        <EdgeLayout
+          Id="Package\loading  sales oledb to flatfile.Paths[OLE DB Source Output]"
+          TopLeft="323.5,104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,118"
+              Start="0,0"
+              End="-11,110.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55"
+                    Point2="0,59"
+                    Point3="-4,59" />
+                  <mssgle:LineSegment
+                    End="-7,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,59"
+                    Point2="-11,59"
+                    Point3="-11,63" />
+                  <mssgle:LineSegment
+                    End="-11,110.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\loading  sales oledb to flatfile\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\loading  sales oledb to flatfile 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\loading  sales oledb to flatfile 1\Flat File Destination"
+          TopLeft="226.5,222.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\loading  sales oledb to flatfile 1\OLE DB Source"
+          TopLeft="248.5,62.5" />
+        <EdgeLayout
+          Id="Package\loading  sales oledb to flatfile 1.Paths[OLE DB Source Output]"
+          TopLeft="323.5,104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,118"
+              Start="0,0"
+              End="-11,110.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55"
+                    Point2="0,59"
+                    Point3="-4,59" />
+                  <mssgle:LineSegment
+                    End="-7,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,59"
+                    Point2="-11,59"
+                    Point3="-11,63" />
+                  <mssgle:LineSegment
+                    End="-11,110.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
